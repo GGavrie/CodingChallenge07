@@ -112,3 +112,25 @@ function filterHighValueTransactions(transactions, filterFunction) {
 // Test data to verify the filterHighValueTransactions function
 console.log(filterHighValueTransactions(transactions, amount => amount > 1000));
 // Expected output: [1200, 3000, 2200]
+
+
+
+
+
+
+// Task 7: Closures - Budget Tracker
+
+function createBudgetTracker() {
+    let balance = 0; // Initialize the balance to 0
+
+    // Return a function that updates the balance and returns the current balance
+    return function(expense) {
+        balance -= expense; // Subtract the expense from the balance
+        return `Current Balance: $${balance}`; // Return the current balance
+    };
+}
+
+// Test Data:
+let budget = createBudgetTracker();
+console.log(budget(300)); // Expected output: "Current Balance: -$300"
+console.log(budget(200)); // Expected output: "Current Balance: -$500"
