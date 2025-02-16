@@ -81,3 +81,16 @@ function calculateShippingCost(weight, location, expedited = false) {
 // Test Data:
 console.log(calculateShippingCost(10, "USA", true)); // Expected output: "Shipping Cost: $20.00"
 console.log(calculateShippingCost(5, "Canada", false)); // Expected output: "Shipping Cost: $13.50"
+
+
+
+// Test 5
+
+function calculateLoanInterest(principal, rate, years) {
+    const interest = principal * rate * years;
+    return `Total Interest: $${interest.toFixed(2)}`;
+}
+
+// Test Data:
+console.log(calculateLoanInterest(1000, 0.05, 3)); // Expected output: "Total Interest: $150.00"
+console.log(calculateLoanInterest(5000, 0.07, 5)); // Expected output: "Total Interest: $1750.00"
