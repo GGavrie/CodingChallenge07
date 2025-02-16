@@ -134,3 +134,34 @@ function createBudgetTracker() {
 let budget = createBudgetTracker();
 console.log(budget(300)); // Expected output: "Current Balance: -$300"
 console.log(budget(200)); // Expected output: "Current Balance: -$500"
+
+
+
+
+
+//Task 8 Recursive Function
+
+// Function to calculate projected revenue growth over a specified number of years
+function calculateGrowth(years, revenue) {
+    // Base case: if years is 0, return the current revenue
+    if (years === 0) {
+        return revenue;
+    }
+
+    // If years is greater than 10, return the current revenue
+    if (years > 10) {
+        return revenue;
+    }
+
+    // Define the growth rate (5% per year)
+    const growthRate = 0.05;
+    // Calculate the new revenue after applying the growth rate
+    const newRevenue = revenue * (1 + growthRate);
+
+    // Recursively call the calculateGrowth function with one less year and the new revenue
+    return calculateGrowth(years - 1, newRevenue);
+}
+
+// Test Data:
+console.log(calculateGrowth(8, 1000)); // Expected output: 1477.4554437500005
+console.log(calculateGrowth(5, 5000)); // Expected output: 6381.406249999999
