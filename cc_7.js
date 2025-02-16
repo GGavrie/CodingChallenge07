@@ -84,7 +84,7 @@ console.log(calculateShippingCost(5, "Canada", false)); // Expected output: "Shi
 
 
 
-// Test 5
+// Test 5  Returning Values
 
 function calculateLoanInterest(principal, rate, years) {
     const interest = principal * rate * years;
@@ -94,3 +94,21 @@ function calculateLoanInterest(principal, rate, years) {
 // Test Data:
 console.log(calculateLoanInterest(1000, 0.05, 3)); // Expected output: "Total Interest: $150.00"
 console.log(calculateLoanInterest(5000, 0.07, 5)); // Expected output: "Total Interest: $1750.00"
+
+
+
+
+// Task 6: Higher-Order Functions 
+
+// Array of transaction amounts
+let transactions = [500, 1200, 3000, 800, 2200];
+
+// Higher-order function to filter transactions based on a provided filter function
+function filterHighValueTransactions(transactions, filterFunction) {
+    // Use the filter method to filter the transactions array
+    return transactions.filter(filterFunction);
+}
+
+// Test data to verify the filterHighValueTransactions function
+console.log(filterHighValueTransactions(transactions, amount => amount > 1000));
+// Expected output: [1200, 3000, 2200]
